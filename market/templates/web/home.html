@@ -1,0 +1,156 @@
+<!-- head para PC -->
+{% extends 'web/base_home.html' %}
+{% load  static %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+<div class="grid-container">
+
+    <!-- primer bloque del home -->
+
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <div class="orbit-wrapper">
+          <div class="orbit-controls">
+            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+          </div>
+          <ul class="orbit-container">
+            <li class="is-active orbit-slide">
+              <figure class="orbit-figure" >
+                <img class="orbit-image" src="{% static 'media/112.jpg' %}" alt="Space">
+                <figcaption class="orbit-caption">Servicio de maquinaria</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="{% static 'media/111.jpg' %}" alt="Space">
+                <figcaption class="orbit-caption">Construccion de asfaltos</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="{% static 'media/113.jpg' %}" alt="Space">
+                <figcaption class="orbit-caption">Transporte internacional</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+        <nav class="orbit-bullets">
+          <button class="is-active" data-slide="0">
+            <span class="show-for-sr">First slide details.</span>
+            <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+          </button>
+          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>
+      </div>
+
+
+
+
+
+    <!-- primer bloque del home -->
+    <div class="grid-x grid-margin-x" style="margin-top: 1em;">
+        <!-- bloque de blog principal -->
+        <div class="cell small-12 large-6">
+            <div class="card" style="width: 100%;">
+                <img src="{% static 'media/1.jpg' %}">
+                <div class="card-section">
+                  <h4>Renta de maquinaria.</h4>
+                  <p>Contamos con el equipo y personal capacitado para poder realizar su trabajo.</p>
+                </div>
+            </div>
+        </div>
+        <!-- FIN bloque de blog principal -->
+
+        <!-- bloque de blog principal -->
+        <div class="cell small-12 large-6 grid-x grid-margin-x">
+            <div class="cell small-12 large-6">
+                <div class="card" style="width: 100%;">
+                    <img src="{% static 'media/2.jpg' %}">
+                    <div class="card-section">
+                      <h5>Extraccion de mineria.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="cell small-12 large-6">
+                <div class="card" style="width: 100%;">
+                    <img src="{% static 'media/3.jpg' %}">
+                    <div class="card-section">
+                      <h5>Transporte Internacional.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="cell small-12 large-6">
+                <div class="card" style="width: 100%;">
+                    <img src="{% static 'media/4.jpg' %}">
+                    <div class="card-section">
+                      <h5>Servicio de fletes.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="cell small-12 large-6">
+                <div class="card" style="width: 100%;">
+                    <img src="{% static 'media/5.jpg' %}">
+                    <div class="card-section">
+                      <h5>Proceso de materia prima.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN bloque de blog principal -->
+
+
+    </div>
+    <!-- FIN del primer bloque home -->
+
+
+
+    <!-- segundo bloque pantalla home -->
+
+    <div class="callout success" data-closable="slide-out-right">
+      <h5>QUIENES SOMOS</h5>
+      <p> Iniciamos operaciones en el año 1964, somos una Empresa Guatemalteca con Alcance a nivel Internacional, dedicados a extraccion de mineria, proceso de materia prima, servicio de transporte nacional e internacional de puerto a empresas, venta y alquiler de maquinaria pesada, servico de construccion en general. </p>
+      <p>Estamos comprometidos a prestar un servicio de calidad y profesionalismo utilizando equipos certificados bajo la norma OSHA 1926.1400/ANSI B 30.5, somos eficientes, resolutivos y tenemos la capacidad de respuesta sin importar la magnitud del trabajo. Nuestro Lema: "LA SEGURIDAD ES PRIMERO”  todo nuestro personal está calificado para cada una de las tareas a realizar.</p>
+      <img src="{% static 'media/9.jpg' %}">
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+
+
+
+    <div class="grid-x align-center" style="margin-top: 1em;">
+        <div class="cell small-12 large-10 callout secondary">
+            <h5>Conoce mas de nostros:</h5>
+
+            <p>
+                <button class="button" data-open="exampleModal2">Suscribirme</button>
+            </p>
+
+            <!-- This is the first modal -->
+            <div class="reveal" id="exampleModal2" data-reveal style="width: 300px;">
+                <p class="lead">Ingresa tu correo</p>
+                <form class="grid-x grid-margin-x">
+                    <div class="cell small-12">
+                        <input type="text" placeholder="E-mail..">
+                    </div>
+                    <div class="cell small-12">
+                        <button type="button" class="success button">Suscribirme</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- FIN segundo bloque pantalla home -->
+
+</div>
+{% include "includes/footer.html" %}
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "producto/base_producto.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-x grid-margin-x">
+  <div class="cell grid-x grid-margin-x" style="margin-top: 2em;">
+    <table class="hover">
+      <thead>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Asunto</th>
+      </thead>
+      <tbody>
+        {% for contacto in contactos %}
+          <tr>
+            <td>{{contacto.full_name}}</td>
+            <td>{{contacto.email}}</td>
+            <td>{{contacto.phone}}</td>
+            <td>{{contacto.business}}</td>
+            <td>
+              <a href="" class="button"><i class="fi-pencil"></i></a>
+              <a href="{% url 'home_app:concact_detail' contacto.id %}" class="button warning"><i class="fi-eye"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock panel-content %}

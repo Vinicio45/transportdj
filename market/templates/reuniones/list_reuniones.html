@@ -1,0 +1,45 @@
+{% extends "producto/base_producto.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-x grid-margin-x">
+  <div class="cell grid-x grid-margin-x">
+    <div class="cell small-3">
+      <a href="{% url 'home_app:add_meet' %}" class="button success">Registrar Nuevo</a>
+    </div>
+  </div>
+
+  <div class="cell grid-x grid-margin-x" style="margin-top: 2em;">
+    <table class="hover">
+        <thead>
+          <th>FECHA</th>
+          <th>HORA</th>
+          <th>ASUNTO</th>
+          <th>GRUPO</th>
+          <th>ACCIONES</th>
+        </thead>
+        <tbody>
+          {% for meet in meets %}
+            <tr>
+              <td>{{meet.date}}</td>
+              <td>{{meet.hour}}</td>
+              <td>{{meet.business}}</td>
+              <td>{{meet.group}}</td>
+              <td>
+                <a href="{% url 'home_app:update_meet' meet.pk %}" class="button"><i class="fi-pencil"></i></a>
+
+                <form class="cell medium-5" action="{% url 'home_app:delete_meet' meet.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="button alert"><i class="fi-x"></i></button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  </div>
+</div>
+
+{% endblock panel-content %}

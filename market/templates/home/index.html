@@ -1,0 +1,45 @@
+{% extends "home/base_home.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-container">
+    <div class="grid-y grid-margin-x align-center">
+      <div class="grid-x grid-padding-x align-center">
+        <div class="callout warning">
+            <h5 class="cell" style="text-align: center;">Bienvenido al Sistema: {{user.full_name}}</h5>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="cell grid-x grid-margin-x" style="margin-top: 2em;">
+      <div class="grid-x grid-padding-x align-center">
+        <div class="callout secondary">
+            <h5 class="cell" style="text-align: center;">Reuniones Programadas</h5>
+        </div>
+      <table class="hover">
+        <thead>
+          <th>FECHA</th>
+          <th>HORA</th>
+          <th>ASUNTO</th>
+          <th>GRUPO</th>
+        </thead>
+        <tbody>
+          {% for meet in meets %}
+            <tr>
+              <td>{{meet.date}}</td>
+              <td>{{meet.hour}}</td>
+              <td>{{meet.business}}</td>
+              <td>{{meet.group}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+</div>
+
+{% endblock panel-content %}

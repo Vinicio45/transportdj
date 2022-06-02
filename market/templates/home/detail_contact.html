@@ -1,0 +1,29 @@
+{% extends "home/base_home.html" %}
+
+{% load  static %}
+
+{% block panel-content %}
+
+<div class="grid-x grid-margin-x align-center">
+  <h5 class="cell" style="margin-bottom: 1em; text-align: center;">Detalle del pedido</h5>  
+  <div class="cell medium-9 grid-x grid-margin-x align-center">
+    
+    <div class="cell medium-7">
+        <div class="card cell">
+            <div class="card-section">
+              <h4>{{ object.business }}</h4>
+              <p><span style="font-weight: bold;">Nombre completo:</span> {{object.full_name}}</p>
+              <p><span style="font-weight: bold;">Correo:</span> {{ object.email }}</p>
+              <p><span style="font-weight: bold;">Telefono:</span> {{ object.phone }}</p>
+              <p><span style="font-weight: bold;">Asunto:</span> {{ object.business }}</p>
+              <p><span style="font-weight: bold;">Mensaje:</span> {{ object.message }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell medium-6">
+      <a target="_blank" href="" class="primary button">Imprimir</a>
+    </div>
+  </div>
+</div>
+
+{% endblock panel-content %}
